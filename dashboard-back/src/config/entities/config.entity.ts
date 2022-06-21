@@ -28,7 +28,7 @@ export interface Config {
     modelImg: string;
   }[];
 
-  instructionImg: string;
+  instructionImg: string[];
 
   quality: {
     img1: string;
@@ -36,7 +36,7 @@ export interface Config {
   };
 }
 
-export const defaultConfig = {
+export const defaultConfig: Config = {
   intro: {
     text: '占位文本',
     img: 'https://iph.href.lu/200x200?text=占位图片',
@@ -70,7 +70,7 @@ export const defaultConfig = {
     },
   ],
 
-  instructionImg: 'https://iph.href.lu/200x200?text=占位图片',
+  instructionImg: ['https://iph.href.lu/200x200?text=占位图片'],
 
   quality: {
     img1: 'https://iph.href.lu/200x200?text=占位图片',

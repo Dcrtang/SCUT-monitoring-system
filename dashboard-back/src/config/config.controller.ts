@@ -4,7 +4,6 @@ import { ConfigService } from './config.service';
 import { Config } from './entities/config.entity';
 
 @Controller('config')
-@UseGuards(JwtAuthGuard)
 export class ConfigController {
   constructor(private readonly configService: ConfigService) {}
   @Get()
@@ -13,6 +12,7 @@ export class ConfigController {
   }
 
   @Patch()
+  @UseGuards(JwtAuthGuard)
   update(@Body() updateConfigDto: Config) {
     return this.configService.update(updateConfigDto);
   }

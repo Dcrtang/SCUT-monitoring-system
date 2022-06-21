@@ -5,6 +5,7 @@ import * as fs from 'fs';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   const configService = app.get(ConfigService);
   const filesPath = configService.get<string>('DATA_PATH') + '/files';
   try {

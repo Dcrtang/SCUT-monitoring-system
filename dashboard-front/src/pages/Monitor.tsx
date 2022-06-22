@@ -1,6 +1,6 @@
 import { Box, Tabs, Tab, Typography } from "@mui/material";
 import { useState } from "react";
-import { useConfig } from "../api";
+import { getFileURL, useConfig } from "../api";
 
 export function Monitor() {
   const [tab, setTab] = useState(0);
@@ -10,7 +10,7 @@ export function Monitor() {
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           {config?.monitingData.map((data, index) => (
-            <Tab label={"阶段" + (index + 1)} />
+            <Tab key={data.id} label={"阶段" + (index + 1)} />
           ))}
         </Tabs>
       </Box>
@@ -23,7 +23,7 @@ export function Monitor() {
         >
           施工监控数据
         </Typography>
-        <img src={config?.monitingData[tab]?.dataImg} />
+        <img src={getFileURL(config?.monitingData[tab]?.dataImg)} />
         <Typography
           variant="h6"
           component="div"
@@ -32,7 +32,7 @@ export function Monitor() {
         >
           施工监控数据模型示意图
         </Typography>
-        <img src={config?.monitingData[tab]?.modelImg} />
+        <img src={getFileURL(config?.monitingData[tab]?.modelImg)} />
       </Box>
     </>
   );

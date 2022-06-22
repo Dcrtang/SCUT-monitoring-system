@@ -4,12 +4,14 @@ export interface Config {
     img: string;
 
     members: {
+      id: string;
       name: string;
       cert: string;
       title: string;
     }[];
 
     unitData: {
+      id: string;
       type: string;
       area: string;
       // 抗弯惯性矩
@@ -19,16 +21,21 @@ export interface Config {
   };
 
   progress: {
+    id: string;
     text: string;
     img: string;
   }[];
 
   monitingData: {
+    id: string;
     dataImg: string;
     modelImg: string;
   }[];
 
-  instructionImg: string[];
+  instructions: {
+    id: string;
+    img: string;
+  }[];
 
   quality: {
     img1: string;

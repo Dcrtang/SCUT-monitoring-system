@@ -12,7 +12,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { useState } from "react";
-import { useConfig } from "../api";
+import { getFileURL, useConfig } from "../api";
 
 export function Intro() {
   const [tab, setTab] = useState(0);
@@ -29,7 +29,7 @@ export function Intro() {
       {tab === 0 && (
         <>
           <Typography>{config?.intro.text}</Typography>
-          <img src={config?.intro.img} />
+          <img src={getFileURL(config?.intro.img)} />
         </>
       )}
       {tab === 1 && (
@@ -76,7 +76,7 @@ export function Intro() {
               </TableBody>
             </Table>
           </TableContainer>
-          <img src={config?.intro.bridgeImg}></img>
+          <img src={getFileURL(config?.intro.bridgeImg)}></img>
         </>
       )}
     </>

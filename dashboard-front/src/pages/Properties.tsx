@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useConfig } from "../api";
+import { getFileURL, useConfig } from "../api";
 
 export function Properties() {
   const { data: config } = useConfig();
@@ -8,9 +8,9 @@ export function Properties() {
       <Typography variant="h6" component="div" textAlign={"center"}>
         指令属性
       </Typography>
-      {config?.instructionImg?.map((img) => (
-        <Box marginTop="24px">
-          <img src={img} />
+      {config?.instructions?.map((instruction) => (
+        <Box key={instruction.id} marginTop="24px">
+          <img src={getFileURL(instruction.img)} />
         </Box>
       ))}
     </Box>

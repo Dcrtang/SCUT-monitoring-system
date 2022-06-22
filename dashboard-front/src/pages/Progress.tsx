@@ -7,7 +7,7 @@ import {
   StepButton,
 } from "@mui/material";
 import { useState } from "react";
-import { useConfig } from "../api";
+import { getFileURL, useConfig } from "../api";
 
 export function Progress() {
   const [step, setStep] = useState(0);
@@ -29,7 +29,7 @@ export function Progress() {
       </Box>
       <Box>
         <Typography>{config?.progress[step]?.text}</Typography>
-        <img src={config?.progress[step]?.img} />
+        <img src={getFileURL(config?.progress[step]?.img)} />
       </Box>
     </>
   );

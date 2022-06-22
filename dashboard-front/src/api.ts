@@ -8,6 +8,11 @@ const agent = axios.create({
   baseURL,
 });
 
+export function getFileURL(fileName?: string) {
+  if (fileName?.startsWith("http")) return fileName;
+  return fileName ? baseURL + "/files/" + fileName : undefined;
+}
+
 agent.interceptors.request.use((config) => {
   const token = localStorage.getItem("BEARER_TOKEN");
   if (token && config.headers) {
@@ -17,8 +22,11 @@ agent.interceptors.request.use((config) => {
 });
 
 agent.interceptors.response.use(undefined, (error) => {
-  throw error;
-  // TODO: redirect
+  if (error.response.status === 401) {
+    location.replace("/login");
+  } else {
+    throw error;
+  }
 });
 
 export async function getConfig() {
@@ -37,8 +45,16 @@ export async function login(password: string) {
   return await agent.post("/login", { password }).then((res) => res.data);
 }
 
-export async function upload(file: Blob, fileName: string) {
+export async function checkLogin() {
+  return await agent.get("/login/check").then((res) => res.data);
+}
+
+export async function reset() {
+  return await agent.post("/reset").then((res) => res.data);
+}
+
+export async function upload(file: File) {
   const body = new FormData();
-  body.append("file", file, fileName);
-  return await agent.post("/upload", body).then((res) => res.data);
+  body.append("file", file);
+  return await agent.post<string>("/upload", body).then((res) => res.data);
 }

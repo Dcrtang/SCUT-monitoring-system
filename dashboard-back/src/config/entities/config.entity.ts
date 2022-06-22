@@ -4,12 +4,14 @@ export interface Config {
     img: string;
 
     members: {
+      id: string;
       name: string;
       cert: string;
       title: string;
     }[];
 
     unitData: {
+      id: string;
       type: string;
       area: string;
       // 抗弯惯性矩
@@ -19,16 +21,21 @@ export interface Config {
   };
 
   progress: {
+    id: string;
     text: string;
     img: string;
   }[];
 
   monitingData: {
+    id: string;
     dataImg: string;
     modelImg: string;
   }[];
 
-  instructionImg: string[];
+  instructions: {
+    id: string;
+    img: string;
+  }[];
 
   quality: {
     img1: string;
@@ -42,6 +49,7 @@ export const defaultConfig: Config = {
     img: 'https://iph.href.lu/200x200?text=占位图片',
     members: [
       {
+        id: '63be0292-7e27-ed7f-a364-1d0982bcdd8a',
         name: '占位文本',
         cert: '占位文本',
         title: '占位文本',
@@ -49,6 +57,7 @@ export const defaultConfig: Config = {
     ],
     unitData: [
       {
+        id: '57360c0b-f7b4-d6d1-cd7d-3cdeece83090',
         type: '占位文本',
         area: '占位文本',
         moment: '占位文本',
@@ -58,6 +67,7 @@ export const defaultConfig: Config = {
   },
   progress: [
     {
+      id: 'ea6b30a1-550c-bb3a-6275-0d70b898d7f9',
       text: '占位文本',
       img: 'https://iph.href.lu/200x200?text=占位图片',
     },
@@ -65,12 +75,18 @@ export const defaultConfig: Config = {
 
   monitingData: [
     {
+      id: '3b9786c0-f8a6-b6f2-ee88-6dc5f1347e21',
       dataImg: 'https://iph.href.lu/200x200?text=占位图片',
       modelImg: 'https://iph.href.lu/200x200?text=占位图片',
     },
   ],
 
-  instructionImg: ['https://iph.href.lu/200x200?text=占位图片'],
+  instructions: [
+    {
+      id: '9826018f-69da-5cb6-bf4b-fc7b37b82a88',
+      img: 'https://iph.href.lu/200x200?text=占位图片',
+    },
+  ],
 
   quality: {
     img1: 'https://iph.href.lu/200x200?text=占位图片',

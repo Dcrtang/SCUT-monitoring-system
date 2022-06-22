@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { LoginDto } from './dto/login.dto';
@@ -11,7 +11,7 @@ export class LoginService {
   ) {}
   login(loginDto: LoginDto) {
     const password = this.configService.get<string>('PASSWORD');
-    if (password !== loginDto.password) throw new UnauthorizedException();
+    if (password !== loginDto.password) throw new BadRequestException();
     return this.jwtService.sign({});
   }
 }

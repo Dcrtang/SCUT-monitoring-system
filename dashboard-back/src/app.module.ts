@@ -7,6 +7,7 @@ import {
 import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { LoginModule } from './login/login.module';
+import { ResetModule } from './reset/reset.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { LoginModule } from './login/login.module';
       ],
     }),
     LoginModule,
+    ResetModule,
   ],
   controllers: [],
 })

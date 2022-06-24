@@ -7,7 +7,7 @@ export function Text({ children }: { children: ReactNode }) {
       component="div"
       sx={{
         backgroundColor: colors.grey[200],
-        margin: "12px",
+        margin: "12px 0",
         padding: "6px",
         borderRadius: "6px",
         border: `1px solid ${colors.grey[300]}`,

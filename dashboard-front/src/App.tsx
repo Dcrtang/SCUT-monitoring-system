@@ -46,7 +46,7 @@ function App() {
               height: "calc(100vh - 64px)",
             }}
           >
-            <Box sx={{ width: 300, height: "100%" }}>
+            <Box sx={{ width: 300, height: "100%", flexShrink: 0 }}>
               <List sx={{ backgroundColor: colors.grey[100], height: "100%" }}>
                 {routes.map((route) =>
                   route.title ? (

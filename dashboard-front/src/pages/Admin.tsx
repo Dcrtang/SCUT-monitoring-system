@@ -89,16 +89,19 @@ export function Admin() {
                 field: "name",
                 headerName: "姓名",
                 editable: true,
+                flex: 1,
               },
               {
                 field: "cert",
                 headerName: "证书",
                 editable: true,
+                flex: 1,
               },
               {
                 field: "title",
                 headerName: "职位",
                 editable: true,
+                flex: 1,
               },
             ]}
             generateNewRow={() => ({
@@ -117,16 +120,19 @@ export function Admin() {
                 field: "type",
                 headerName: "类型",
                 editable: true,
+                flex: 1,
               },
               {
                 field: "area",
                 headerName: "面积",
                 editable: true,
+                flex: 1,
               },
               {
                 field: "moment",
                 headerName: "力矩",
                 editable: true,
+                flex: 1,
               },
             ]}
             generateNewRow={() => ({

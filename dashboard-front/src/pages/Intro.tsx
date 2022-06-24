@@ -10,9 +10,11 @@ import {
   TableCell,
   TableHead,
   TableRow,
+  colors,
 } from "@mui/material";
 import { useState } from "react";
 import { getFileURL, useConfig } from "../api";
+import { Text } from "../components/Text";
 
 export function Intro() {
   const [tab, setTab] = useState(0);
@@ -28,7 +30,7 @@ export function Intro() {
       </Box>
       {tab === 0 && (
         <>
-          <Typography>{config?.intro.text}</Typography>
+          <Text>{config?.intro.text}</Text>
           <img src={getFileURL(config?.intro.img)} />
         </>
       )}
@@ -55,7 +57,7 @@ export function Intro() {
         </TableContainer>
       )}
       {tab === 2 && (
-        <>
+        <Box sx={{ textAlign: "center" }}>
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
@@ -76,8 +78,11 @@ export function Intro() {
               </TableBody>
             </Table>
           </TableContainer>
-          <img src={getFileURL(config?.intro.bridgeImg)}></img>
-        </>
+          <img
+            style={{ marginTop: "12px" }}
+            src={getFileURL(config?.intro.bridgeImg)}
+          ></img>
+        </Box>
       )}
     </>
   );

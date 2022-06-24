@@ -22,12 +22,14 @@ export interface Config {
 
   progress: {
     id: string;
+    name: string;
     text: string;
     img: string;
   }[];
 
   monitingData: {
     id: string;
+    name: string;
     dataImg: string;
     modelImg: string;
   }[];

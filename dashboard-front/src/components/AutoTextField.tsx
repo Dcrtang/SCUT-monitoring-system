@@ -5,8 +5,13 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "react-use";
 import { useMutation } from "react-query";
 
-export function AutoTextField(props: { field: string; label: string }) {
-  const { field, label } = props;
+export function AutoTextField(props: {
+  field: string;
+  label: string;
+  fullwidth?: boolean;
+  multiline?: boolean;
+}) {
+  const { field, label, fullwidth = false, multiline = false } = props;
   const { data: config, refetch } = useConfig();
   const [value, setValue] = useState("");
   const setConfigMutation = useMutation(setConfig);
@@ -43,6 +48,8 @@ export function AutoTextField(props: { field: string; label: string }) {
     <>
       <TextField
         label={label}
+        fullWidth={fullwidth}
+        multiline={multiline}
         variant="standard"
         value={value ?? ""}
         onChange={(e) => {

@@ -1,4 +1,13 @@
-import { Box, Tabs, Tab, Typography } from "@mui/material";
+import {
+  Box,
+  Tabs,
+  Tab,
+  Typography,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import { useState } from "react";
 import { getFileURL, useConfig } from "../api";
 
@@ -7,13 +16,24 @@ export function Monitor() {
   const { data: config } = useConfig();
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={tab} onChange={(e, v) => setTab(v)}>
-          {config?.monitingData.map((data, index) => (
-            <Tab key={data.id} label={"阶段" + (index + 1)} />
+      <FormControl>
+        <InputLabel id="step-select-label">请选择</InputLabel>
+        <Select
+          labelId="step-select-label"
+          label="请选择"
+          sx={{ width: "300px" }}
+          value={tab}
+          onChange={(e) => {
+            setTab(+e.target.value);
+          }}
+        >
+          {config?.monitingData?.map((item, index) => (
+            <MenuItem key={item.id} value={index}>
+              {item.name}
+            </MenuItem>
           ))}
-        </Tabs>
-      </Box>
+        </Select>
+      </FormControl>
       <Box textAlign={"center"}>
         <Typography
           variant="h6"

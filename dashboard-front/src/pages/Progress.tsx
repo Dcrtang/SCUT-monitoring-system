@@ -1,12 +1,13 @@
 import {
-  Stepper,
   Typography,
-  Step,
-  StepLabel,
   Box,
-  StepButton,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
 } from "@mui/material";
 import { useState } from "react";
+import { Text } from "../components/Text";
 import { getFileURL, useConfig } from "../api";
 
 export function Progress() {
@@ -14,21 +15,26 @@ export function Progress() {
   const { data: config } = useConfig();
   return (
     <>
-      <Box sx={{ margin: "24px auto", maxWidth: "800px" }}>
-        <Stepper activeStep={step}>
-          {config?.progress.map((stepInfo, index) => {
-            return (
-              <Step key={index} completed={false}>
-                <StepButton onClick={() => setStep(index)} disabled={false}>
-                  阶段{index + 1}
-                </StepButton>
-              </Step>
-            );
-          })}
-        </Stepper>
-      </Box>
+      <FormControl>
+        <InputLabel id="step-select-label">请选择</InputLabel>
+        <Select
+          sx={{ width: "300px" }}
+          labelId="step-select-label"
+          label="请选择"
+          value={step}
+          onChange={(e) => {
+            setStep(+e.target.value);
+          }}
+        >
+          {config?.progress?.map((item, index) => (
+            <MenuItem key={item.id} value={index}>
+              {item.name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
       <Box>
-        <Typography>{config?.progress[step]?.text}</Typography>
+        <Text>{config?.progress[step]?.text}</Text>
         <img src={getFileURL(config?.progress[step]?.img)} />
       </Box>
     </>

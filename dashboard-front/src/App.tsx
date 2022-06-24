@@ -53,13 +53,11 @@ function App() {
                     <ListItem key={route.path} disablePadding>
                       <ListItemButton
                         selected={location.pathname === route.path}
+                        onClick={() => {
+                          navigate(route.path);
+                        }}
                       >
-                        <ListItemText
-                          primary={route.title}
-                          onClick={() => {
-                            navigate(route.path);
-                          }}
-                        />
+                        <ListItemText primary={route.title} />
                       </ListItemButton>
                     </ListItem>
                   ) : null

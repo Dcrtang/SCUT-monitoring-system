@@ -22,12 +22,14 @@ export interface Config {
 
   progress: {
     id: string;
+    name: string;
     text: string;
     img: string;
   }[];
 
   monitingData: {
     id: string;
+    name: string;
     dataImg: string;
     modelImg: string;
   }[];
@@ -68,6 +70,7 @@ export const defaultConfig: Config = {
   progress: [
     {
       id: 'ea6b30a1-550c-bb3a-6275-0d70b898d7f9',
+      name: '占位文本',
       text: '占位文本',
       img: 'https://iph.href.lu/200x200?text=占位图片',
     },
@@ -76,6 +79,7 @@ export const defaultConfig: Config = {
   monitingData: [
     {
       id: '3b9786c0-f8a6-b6f2-ee88-6dc5f1347e21',
+      name: '占位文本',
       dataImg: 'https://iph.href.lu/200x200?text=占位图片',
       modelImg: 'https://iph.href.lu/200x200?text=占位图片',
     },

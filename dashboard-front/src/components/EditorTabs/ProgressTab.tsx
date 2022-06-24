@@ -24,6 +24,7 @@ export function ProgressTab() {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
             newConfig.progress.splice(selectedIndex, 0, {
               id: uuid.v4(),
+              name: "占位文本",
               text: "占位文本",
               img: "https://iph.href.lu/200x200?text=占位图片",
             });
@@ -85,14 +86,16 @@ export function ProgressTab() {
             setSelectedIndex(index);
           }}
         >
+          <AutoTextField field={`progress[${index}].name`} label={"阶段名称"} />
+          <Box sx={{ height: "12px" }} />
           <AutoTextField
             field={`progress[${index}].text`}
-            label={`阶段${index + 1}进度说明`}
+            label={`${config?.progress?.[index]?.name}进度说明`}
           />
           <Box sx={{ height: "12px" }} />
           <ImageSelector
             field={`progress[${index}].img`}
-            label={`阶段${index + 1}进度模型示意图`}
+            label={`${config?.progress?.[index]?.name}进度模型示意图`}
           />
         </Card>
       ))}

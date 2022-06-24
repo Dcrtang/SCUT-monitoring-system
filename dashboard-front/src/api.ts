@@ -46,7 +46,7 @@ export async function login(password: string) {
 }
 
 export async function checkLogin() {
-  return await agent.get("/login/check").then((res) => res.data);
+  return await agent.get("/login/check");
 }
 
 export async function reset() {

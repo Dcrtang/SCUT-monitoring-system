@@ -6,6 +6,7 @@ import { setConfig, useConfig } from "../../api";
 import { Config } from "../../types";
 import { ImageSelector } from "../ImageSelector";
 import * as uuid from "uuid";
+import { AutoTextField } from "../AutoTextField";
 
 export function MonitorTab() {
   const { data: config, refetch } = useConfig();
@@ -23,6 +24,7 @@ export function MonitorTab() {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
             newConfig.monitingData.splice(selectedIndex, 0, {
               id: uuid.v4(),
+              name: "占位文本",
               dataImg: "https://iph.href.lu/200x200?text=占位图片",
               modelImg: "https://iph.href.lu/200x200?text=占位图片",
             });
@@ -77,21 +79,31 @@ export function MonitorTab() {
             ":hover": {
               cursor: "pointer",
             },
-            display: "flex",
           }}
           onClick={() => {
             setSelectedIndex(index);
           }}
         >
-          <ImageSelector
-            field={`monitingData[${index}].dataImg`}
-            label={`阶段${index + 1}数据图片`}
+          <AutoTextField
+            field={`monitingData[${index}].name`}
+            label={"阶段名称"}
           />
-          <Box sx={{ width: "12px" }} />
-          <ImageSelector
-            field={`monitingData[${index}].modelImg`}
-            label={`阶段${index + 1}模型图片`}
-          />
+          <Box sx={{ height: "12px" }} />
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
+            <ImageSelector
+              field={`monitingData[${index}].dataImg`}
+              label={`${config?.monitingData?.[index]?.name}数据图片`}
+            />
+            <Box sx={{ width: "12px" }} />
+            <ImageSelector
+              field={`monitingData[${index}].modelImg`}
+              label={`${config?.monitingData?.[index]?.name}模型图片`}
+            />
+          </Box>
         </Card>
       ))}
 

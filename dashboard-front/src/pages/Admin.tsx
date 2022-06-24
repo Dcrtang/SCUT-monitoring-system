@@ -4,7 +4,6 @@ import {
   Tab,
   Button,
   Dialog,
-  Typography,
   DialogContent,
   DialogActions,
   DialogTitle,
@@ -23,11 +22,15 @@ import { useMutation } from "react-query";
 export function Admin() {
   const [tab, setTab] = useState(0);
   const [open, setOpen] = useState(false);
+  const checkLoginMutation = useMutation(checkLogin, { retry: false });
   useEffect(() => {
-    checkLogin();
+    checkLoginMutation.mutate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const resetMutation = useMutation(reset);
-  return (
+  return checkLoginMutation.isLoading ? (
+    <div>loading...</div>
+  ) : (
     <Box sx={{ position: "relative" }}>
       <Button
         variant="contained"
@@ -69,8 +72,15 @@ export function Admin() {
       </Box>
       {tab === 0 && (
         <>
-          <AutoTextField field="intro.text" label="项目概况文本" />
+          <AutoTextField
+            field="intro.text"
+            label="项目概况文本"
+            multiline
+            fullwidth
+          />
+          <Box sx={{ height: "12px" }} />
           <ImageSelector field="intro.img" label="项目概况图片" />
+          <Box sx={{ height: "36px" }} />
           <DataEditor
             field="intro.members"
             label="人员组织表格"
@@ -98,6 +108,7 @@ export function Admin() {
               title: "占位文本",
             })}
           />
+          <Box sx={{ height: "12px" }} />
           <DataEditor
             field="intro.unitData"
             label="主梁单元数据表格"

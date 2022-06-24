@@ -89,6 +89,7 @@ export function ProgressTab() {
           <AutoTextField field={`progress[${index}].name`} label={"阶段名称"} />
           <Box sx={{ height: "12px" }} />
           <AutoTextField
+            multiline
             field={`progress[${index}].text`}
             label={`${config?.progress?.[index]?.name}进度说明`}
           />

@@ -12,15 +12,15 @@ export const theme = createTheme({
     fontFamily: [
       "-apple-system",
       "BlinkMacSystemFont",
-      '"Segoe UI"',
+      "\"Segoe UI\"",
       "Roboto",
-      '"Noto Sans SC"',
-      '"Helvetica Neue"',
+      "\"Noto Sans SC\"",
+      "\"Helvetica Neue\"",
       "Arial",
       "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
+      "\"Apple Color Emoji\"",
+      "\"Segoe UI Emoji\"",
+      "\"Segoe UI Symbol\"",
     ].join(","),
   },
 });
@@ -58,7 +58,6 @@ export const routes = [
   {
     path: "/admin",
     element: <Admin />,
-    title: "管理",
   },
   {
     path: "/login",

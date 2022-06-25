@@ -18,7 +18,7 @@ jobs:
     - name: Build and Publish to Dockerhub
       uses: elgohr/Publish-Docker-Github-Action@v4
       with:
-        workdir: ${PWD}/dashboard-front
+        workdir: ${{ PWD }}/dashboard-front
         name: ${{ secrets.DOCKER_USERNAME }}/scut-monitoring-system
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}

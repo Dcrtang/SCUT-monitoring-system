@@ -4,7 +4,6 @@ COPY . /app
 WORKDIR /app
 
 RUN npm i
-RUN ls src
 RUN npm run build
 
 FROM nginx:alpine

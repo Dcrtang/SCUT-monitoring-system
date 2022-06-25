@@ -2,7 +2,8 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { Config } from "./types";
 
-const baseURL = "http://localhost:3001";
+const baseURL =
+  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3001";
 
 const agent = axios.create({
   baseURL,

@@ -7,17 +7,27 @@ on:
     branches: ["master"]
 
 jobs:
-  build-fe:
+  build-frontend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      # - name: Build the Docker image
-      #   run: docker build ./dashboard-front --tag scut-monitoring-system
       - name: Build and Publish to Dockerhub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
           workdir: dashboard-front
-          name: ${{secrets.DOCKER_USERNAME}}/scut-monitoring-system
+          name: ${{secrets.DOCKER_USERNAME}}/scut-monitoring-system-front
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Build and Publish to Dockerhub
+        uses: elgohr/Publish-Docker-Github-Action@v4
+        with:
+          workdir: dashboard-back
+          name: ${{secrets.DOCKER_USERNAME}}/scut-monitoring-system-back
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}

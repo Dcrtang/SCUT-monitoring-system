@@ -10,6 +10,15 @@
 
 - docker-compose
 
+### Install Docker
+
+```shell
+curl -sSL https://get.daocloud.io/docker -o docker-install.sh
+chmod +x docker-install.sh
+sudo ./docker-install.sh --mirror Aliyun
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
+```
+
 ## Boot up the system
 
 1. Clone the project
@@ -22,7 +31,7 @@
    
    ```shell
    cd SCUT-monitoring-system
-   docker-compose up -d
+   sudo docker compose up -d
    ```
 
 ### Operations
@@ -31,12 +40,12 @@
   
   ```shell
   cd SCUT-monitoring-system
-  docker-compose down
+  sudo docker compose down
   ```
 
 - Updating services
   
   ```shell
   cd SCUT-monitoring-system
-  docker-compose pull
+  sudo docker compose pull
   ```

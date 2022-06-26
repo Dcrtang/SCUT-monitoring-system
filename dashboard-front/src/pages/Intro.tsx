@@ -21,7 +21,7 @@ export function Intro() {
   const { data: config } = useConfig();
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider"}}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label="项目概况" />
           <Tab label="人员组织" />
@@ -31,7 +31,7 @@ export function Intro() {
       {tab === 0 && (
         <>
           <Text>{config?.intro.text}</Text>
-          <img src={getFileURL(config?.intro.img)} />
+          <img src={getFileURL(config?.intro.img)} style={{ marginTop: "36px", display: "block", margin: "auto" }} />
         </>
       )}
       {tab === 1 && (

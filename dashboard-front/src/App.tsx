@@ -17,6 +17,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { routes, theme } from "./constants";
 import { useRef } from "react";
+import { ListItemIcon } from "@material-ui/core";
 
 const queryClient = new QueryClient();
 
@@ -46,17 +47,18 @@ function App() {
               height: "calc(100vh - 64px)",
             }}
           >
-            <Box sx={{ width: 300, height: "100%", flexShrink: 0 }}>
-              <List sx={{ backgroundColor: colors.grey[100], height: "100%" }}>
+            <Box sx={{ width: 250, height: "100%", flexShrink: 0 }}>
+              <List sx={{ backgroundColor: colors.grey[100], height: "100%"}}>
                 {routes.map((route) =>
                   route.title ? (
-                    <ListItem key={route.path} disablePadding>
-                      <ListItemButton
+                    <ListItem key={route.path} disablePadding sx={{height:"64px"}}>
+                      <ListItemButton sx={{height:"100%"}}
                         selected={location.pathname === route.path}
                         onClick={() => {
                           navigate(route.path);
                         }}
                       >
+                        <ListItemIcon>{route.icon}</ListItemIcon>
                         <ListItemText primary={route.title} />
                       </ListItemButton>
                     </ListItem>

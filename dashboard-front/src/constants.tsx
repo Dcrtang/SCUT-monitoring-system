@@ -28,32 +28,36 @@ export const routes = [
   {
     path: "/",
     element: "index",
-    title: "首页",
   },
   {
     path: "/intro",
     element: <Intro />,
     title: "项目简介",
+    icon: "<HomeIcon />",
   },
   {
     path: "/progress",
     element: <Progress />,
     title: "工程进度",
+    icon: "<CachedIcon />",
   },
   {
     path: "/monitor",
     element: <Monitor />,
     title: "施工监测数据",
+    icon: "<AirplayIconv />",
   },
   {
     path: "/properties",
     element: <Properties />,
     title: "指令属性",
+    icon: "<AppsIcon />",
   },
   {
     path: "/quality",
     element: <Quality />,
     title: "工程质量管理",
+    icon: "<SettingsIcon />",
   },
   {
     path: "/admin",

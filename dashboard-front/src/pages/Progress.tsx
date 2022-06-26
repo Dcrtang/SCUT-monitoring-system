@@ -35,7 +35,7 @@ export function Progress() {
       </FormControl>
       <Box>
         <Text>{config?.progress[step]?.text}</Text>
-        <img src={getFileURL(config?.progress[step]?.img)} />
+        <img src={getFileURL(config?.progress[step]?.img)}  style={{ marginTop: "36px", display: "block", margin: "auto" }} />
       </Box>
     </>
   );

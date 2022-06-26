@@ -17,7 +17,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { routes, theme } from "./constants";
 import { useRef } from "react";
-import { ListItemIcon } from "@material-ui/core";
+// import { ListItemIcon } from "@material-ui/core";
 
 const queryClient = new QueryClient();
 
@@ -58,7 +58,7 @@ function App() {
                           navigate(route.path);
                         }}
                       >
-                        <ListItemIcon>{route.icon}</ListItemIcon>
+                        {/* <ListItemIcon>{route.icon}</ListItemIcon> */}
                         <ListItemText primary={route.title} />
                       </ListItemButton>
                     </ListItem>

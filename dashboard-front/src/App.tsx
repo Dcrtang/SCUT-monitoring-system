@@ -35,7 +35,7 @@ function App() {
             <AppBar position="static">
               <Toolbar>
                 <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                  华南理工大学施工监测系统
+                  华南理工大学施工监测系统洪奇门特大桥项目
                 </Typography>
               </Toolbar>
             </AppBar>

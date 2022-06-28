@@ -1,7 +1,24 @@
 import { colors, Typography } from "@mui/material";
-import { ReactNode } from "react";
+import React from "react";
 
-export function Text({ children }: { children: ReactNode }) {
+export function Text({
+  children: text,
+  whitespace = true,
+}: {
+  children?: string;
+  whitespace?: boolean;
+}) {
+  const children = whitespace
+    ? text
+      ?.replaceAll(" ", "\u00A0")
+      .split("\n")
+      .map((row, index) => (
+        <React.Fragment key={index}>
+          {row}
+          <br />
+        </React.Fragment>
+      ))
+    : text;
   return (
     <Typography
       component="div"

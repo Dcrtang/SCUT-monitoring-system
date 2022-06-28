@@ -56,4 +56,4 @@ jobs:
           port: 22
           script: cd ~/SCUT-monitoring-system && sudo docker compose down && sudo docker compose pull && sudo docker compose up -d
       - name: Send notification
-        run: curl -sSL https://sctapi.ftqq.com/SCT158118TGBWeKk69xACnkaJyfImKyL8j.send?title=服务部署完成
+        run: curl -sSL https://sctapi.ftqq.com/${{ secrets.NOTIFICATION_KEY }}.send?title=服务部署完成

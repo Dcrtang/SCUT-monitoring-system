@@ -1,4 +1,6 @@
 export interface Config {
+  title: string;
+
   intro: {
     text: string;
     img: string;
@@ -46,6 +48,7 @@ export interface Config {
 }
 
 export const defaultConfig: Config = {
+  title: '华南理工大学施工监测系统',
   intro: {
     text: '占位文本',
     img: 'https://iph.href.lu/200x200?text=占位图片',

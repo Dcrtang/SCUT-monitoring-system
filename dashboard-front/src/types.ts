@@ -1,4 +1,5 @@
 export interface Config {
+  title: string;
   intro: {
     text: string;
     img: string;

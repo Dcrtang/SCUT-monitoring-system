@@ -1,4 +1,9 @@
 import { createTheme } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import CachedIcon from "@mui/icons-material/Cached";
+import AirplayIcon from "@mui/icons-material/Airplay";
+import AppsIcon from "@mui/icons-material/Apps";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { Admin } from "./pages/Admin";
 import { Intro } from "./pages/Intro";
 import { Login } from "./pages/Login";
@@ -29,31 +34,31 @@ export const routes = [
     path: "/",
     element: <Intro />,
     title: "项目简介",
-    icon: "<HomeIcon />",
+    icon: <HomeIcon />,
   },
   {
     path: "/progress",
     element: <Progress />,
     title: "工程进度",
-    icon: "<CachedIcon />",
+    icon: <CachedIcon />,
   },
   {
     path: "/monitor",
     element: <Monitor />,
     title: "施工监测数据",
-    icon: "<AirplayIconv />",
+    icon: <AirplayIcon />,
   },
   {
     path: "/properties",
     element: <Properties />,
     title: "指令属性",
-    icon: "<AppsIcon />",
+    icon: <AppsIcon />,
   },
   {
     path: "/quality",
     element: <Quality />,
     title: "工程质量管理",
-    icon: "<SettingsIcon />",
+    icon: <SettingsIcon />,
   },
   {
     path: "/admin",

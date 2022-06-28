@@ -61,6 +61,7 @@ export function Admin() {
           </Button>
         </DialogActions>
       </Dialog>
+
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label="项目简介" />
@@ -72,6 +73,11 @@ export function Admin() {
       </Box>
       {tab === 0 && (
         <>
+          <AutoTextField
+            field="title"
+            label="网站标题"
+            fullwidth
+          />
           <AutoTextField
             field="intro.text"
             label="项目概况文本"

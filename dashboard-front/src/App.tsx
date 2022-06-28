@@ -3,7 +3,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  createTheme,
   ThemeProvider,
   CssBaseline,
   List,
@@ -11,23 +10,21 @@ import {
   ListItemButton,
   ListItemText,
   colors,
+  ListItemIcon,
 } from "@mui/material";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { routes, theme } from "./constants";
 import { useRef } from "react";
-// import { ListItemIcon } from "@material-ui/core";
-
-const queryClient = new QueryClient();
+import { useConfig } from "./api";
 
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const navBarRef = useRef<HTMLDivElement>();
+  const {data: config } = useConfig();
   return (
-    <QueryClientProvider client={queryClient}>
-      <CssBaseline />
+    <><CssBaseline />
       <ReactQueryDevtools />
       <ThemeProvider theme={theme}>
         <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
@@ -35,7 +32,7 @@ function App() {
             <AppBar position="static">
               <Toolbar>
                 <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                  华南理工大学施工监测系统洪奇门特大桥项目
+                  {config?.title}
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -48,17 +45,22 @@ function App() {
             }}
           >
             <Box sx={{ width: 250, height: "100%", flexShrink: 0 }}>
-              <List sx={{ backgroundColor: colors.grey[100], height: "100%"}}>
+              <List sx={{ backgroundColor: colors.grey[100], height: "100%" }}>
                 {routes.map((route) =>
                   route.title ? (
-                    <ListItem key={route.path} disablePadding sx={{height:"64px"}}>
-                      <ListItemButton sx={{height:"100%"}}
+                    <ListItem
+                      key={route.path}
+                      disablePadding
+                      sx={{ height: "64px" }}
+                    >
+                      <ListItemButton
+                        sx={{ height: "100%" }}
                         selected={location.pathname === route.path}
                         onClick={() => {
                           navigate(route.path);
                         }}
                       >
-                        {/* <ListItemIcon>{route.icon}</ListItemIcon> */}
+                        <ListItemIcon>{route.icon}</ListItemIcon>
                         <ListItemText primary={route.title} />
                       </ListItemButton>
                     </ListItem>
@@ -86,8 +88,8 @@ function App() {
             </Box>
           </Box>
         </Box>
-      </ThemeProvider>
-    </QueryClientProvider>
+      </ThemeProvider></>
+      
   );
 }
 

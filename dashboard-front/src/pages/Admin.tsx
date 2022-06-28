@@ -18,6 +18,7 @@ import { MonitorTab } from "../components/EditorTabs/MonitorTab";
 import { ProgressTab } from "../components/EditorTabs/ProgressTab";
 import { checkLogin, reset } from "../api";
 import { useMutation } from "react-query";
+import { QualityTab } from "../components/EditorTabs/QualityTab";
 
 export function Admin() {
   const [tab, setTab] = useState(0);
@@ -73,11 +74,7 @@ export function Admin() {
       </Box>
       {tab === 0 && (
         <>
-          <AutoTextField
-            field="title"
-            label="网站标题"
-            fullwidth
-          />
+          <AutoTextField field="title" label="网站标题" fullwidth />
           <AutoTextField
             field="intro.text"
             label="项目概况文本"
@@ -154,12 +151,7 @@ export function Admin() {
       {tab === 1 && <ProgressTab />}
       {tab === 2 && <MonitorTab />}
       {tab === 3 && <InstructionImagesTab />}
-      {tab === 4 && (
-        <>
-          <ImageSelector field="quality.img1" label="工程质量管理图片1" />
-          <ImageSelector field="quality.img2" label="工程质量管理图片2" />
-        </>
-      )}
+      {tab === 4 && <QualityTab />}
     </Box>
   );
 }

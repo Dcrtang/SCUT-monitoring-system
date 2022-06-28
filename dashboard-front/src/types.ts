@@ -41,7 +41,9 @@ export interface Config {
   }[];
 
   quality: {
+    id: string;
+    name: string;
     img1: string;
     img2: string;
-  };
+  }[];
 }

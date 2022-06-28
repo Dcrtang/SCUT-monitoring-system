@@ -4,6 +4,7 @@ import CachedIcon from "@mui/icons-material/Cached";
 import AirplayIcon from "@mui/icons-material/Airplay";
 import AppsIcon from "@mui/icons-material/Apps";
 import SettingsIcon from "@mui/icons-material/Settings";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import { Admin } from "./pages/Admin";
 import { Intro } from "./pages/Intro";
 import { Login } from "./pages/Login";
@@ -63,6 +64,8 @@ export const routes = [
   {
     path: "/admin",
     element: <Admin />,
+    title: import.meta.env.DEV ? "管理" : undefined,
+    icon: <ManageAccountsIcon />,
   },
   {
     path: "/login",

@@ -24,7 +24,8 @@ function App() {
   const navBarRef = useRef<HTMLDivElement>();
   const {data: config } = useConfig();
   return (
-    <><CssBaseline />
+    <>
+      <CssBaseline />
       <ReactQueryDevtools />
       <ThemeProvider theme={theme}>
         <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
@@ -88,8 +89,8 @@ function App() {
             </Box>
           </Box>
         </Box>
-      </ThemeProvider></>
-      
+      </ThemeProvider>
+    </>
   );
 }
 

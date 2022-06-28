@@ -42,9 +42,11 @@ export interface Config {
   }[];
 
   quality: {
+    id: string;
+    name: string;
     img1: string;
     img2: string;
-  };
+  }[];
 }
 
 export const defaultConfig: Config = {
@@ -95,8 +97,12 @@ export const defaultConfig: Config = {
     },
   ],
 
-  quality: {
-    img1: 'https://iph.href.lu/200x200?text=占位图片',
-    img2: 'https://iph.href.lu/200x200?text=占位图片',
-  },
+  quality: [
+    {
+      id: '5459879e-dc9f-4aa3-8aba-b62871f9f853',
+      name: '占位文本',
+      img1: 'https://iph.href.lu/200x200?text=占位图片',
+      img2: 'https://iph.href.lu/200x200?text=占位图片',
+    },
+  ],
 };

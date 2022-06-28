@@ -27,10 +27,6 @@ export const theme = createTheme({
 export const routes = [
   {
     path: "/",
-    element: "index",
-  },
-  {
-    path: "/intro",
     element: <Intro />,
     title: "项目简介",
     icon: "<HomeIcon />",

@@ -68,7 +68,7 @@ function App() {
             </Box>
             <Box
               sx={{
-                bgcolor: "Background",
+                bgcolor: "white",
                 flexGrow: 1,
                 padding: "16px",
                 overflowY: "scroll",

@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Cache deps
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
       - name: Build and Publish to Dockerhub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
@@ -24,6 +29,11 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Cache deps
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
       - name: Build and Publish to Dockerhub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
@@ -42,6 +52,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: 22
-          script: cd ~/SCUT-monitoring-system && sudo docker compose down && sudo docker compose pull && sudo docker compose up
+          script: cd ~/SCUT-monitoring-system && sudo docker compose down && sudo docker compose pull && sudo docker compose up -d
       - name: Send notification
         run: curl -sSL https://sctapi.ftqq.com/SCT158118TGBWeKk69xACnkaJyfImKyL8j.send?title=服务部署完成

@@ -8,6 +8,7 @@ on:
 
 jobs:
   build-frontend:
+    concurrency: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -20,6 +21,7 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
   build-backend:
+    concurrency: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -31,3 +33,17 @@ jobs:
           name: ${{secrets.DOCKER_USERNAME}}/scut-monitoring-system-back
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
+  deploy-to-server:
+    concurrency: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying to test server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: cd ~/SCUT-monitoring-system && docker compose down && docker compose pull && docker compose up
+      - name: Send notification
+        run: curl -sSL https://sctapi.ftqq.com/SCT158118TGBWeKk69xACnkaJyfImKyL8j.send?title=服务部署完成

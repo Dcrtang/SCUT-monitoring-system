@@ -12,12 +12,14 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      # - name: Cache deps
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 14
-      #     cache: 'npm'
-      #     cache-dependency-path: dashboard-front/package-lock.json
+      - name: Cache deps
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
+          cache-dependency-path: dashboard-front/package-lock.json
+      - name: Build to static site
+        run: cd dashboard-front && npm i && npm run build
       - name: Build and Publish to Dockerhub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:

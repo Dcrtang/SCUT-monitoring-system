@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 14
           cache: 'npm'
+          cache-dependency-path: dashboard-front/package-lock.json
       - name: Build and Publish to Dockerhub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
@@ -34,6 +35,7 @@ jobs:
         with:
           node-version: 14
           cache: 'npm'
+          cache-dependency-path: dashboard-back/package-lock.json
       - name: Build and Publish to Dockerhub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:

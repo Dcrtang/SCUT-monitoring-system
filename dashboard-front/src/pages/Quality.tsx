@@ -37,7 +37,7 @@ export function Quality() {
           variant="h6"
           component="div"
           textAlign={"center"}
-          margin={"24px 0 6px 0"}
+          margin={"3% 0 1% 0"}
         >
           工程质量管理
         </Typography>
@@ -48,7 +48,7 @@ export function Quality() {
           variant="h6"
           component="div"
           textAlign={"center"}
-          margin={"24px 0 6px 0"}
+          margin={"3% 0 1% 0"}
         >
           工程质量管理图
         </Typography>

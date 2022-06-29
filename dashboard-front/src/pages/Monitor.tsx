@@ -39,16 +39,17 @@ export function Monitor() {
           variant="h6"
           component="div"
           textAlign="center"
-          margin={"24px 0 6px 0"}
+          margin={"3% 0 1% 0"}
         >
           施工监控数据
         </Typography>
         <img src={getFileURL(config?.monitingData[tab]?.dataImg)} />
+        <Box sx={{ height: "3%" }} />
         <Typography
           variant="h6"
           component="div"
           textAlign="center"
-          margin={"24px 0 6px 0"}
+          margin={"3% 0 1% 0"}
         >
           施工监控数据模型示意图
         </Typography>

@@ -29,6 +29,48 @@ export interface Config {
     img: string;
   }[];
 
+  report: {
+    id: string;
+    name: string;
+    description: string;
+
+    length: {
+      id: string;
+      name: string;
+      lengthNum: string;
+      factLeft: string;
+      factMid: string;
+      factRight: string;
+      theoryLeft: string;
+      theoryMid: string;
+      theoryRight: string;
+      errorLeft: string;
+      errorMid: string;
+      errorRight: string;
+    }[];
+
+    width: {
+      id: string;
+      name: string;
+      widthNum: string;
+      factLeft: string;
+      factMid: string;
+      factRight: string;
+      theoryLeft: string;
+      theoryMid: string;
+      theoryRight: string;
+      errorLeft: string;
+      errorMid: string;
+      errorRight: string;
+    }[];
+
+    lengthImg: string;
+    widthImg: string;
+
+    hengImg: string;
+    zongImg: string;
+  }[];
+
   monitingData: {
     id: string;
     name: string;
@@ -78,6 +120,51 @@ export const defaultConfig: Config = {
       name: '占位文本',
       text: '占位文本',
       img: 'https://iph.href.lu/200x200?text=占位图片',
+    },
+  ],
+
+  report: [
+    {
+      id: '033c2d74-f4ed-a38b-eb24-9ad3791bcbf0',
+      name: '占位文本',
+      description: '占位文本',
+      length: [
+        {
+          id: 'b0485343-1ecf-e4be-002b-8de70e13ed2b',
+          name: '占位文本',
+          lengthNum: '占位文本',
+          factLeft: '占位文本',
+          factMid: '占位文本',
+          factRight: '占位文本',
+          theoryLeft: '占位文本',
+          theoryMid: '占位文本',
+          theoryRight: '占位文本',
+          errorLeft: '占位文本',
+          errorMid: '占位文本',
+          errorRight: '占位文本',
+        },
+      ],
+
+      width: [
+        {
+          id: 'd3dfcca1-7f1d-7abd-7742-013f687ee63a',
+          name: '占位文本',
+          widthNum: '占位文本',
+          factLeft: '占位文本',
+          factMid: '占位文本',
+          factRight: '占位文本',
+          theoryLeft: '占位文本',
+          theoryMid: '占位文本',
+          theoryRight: '占位文本',
+          errorLeft: '占位文本',
+          errorMid: '占位文本',
+          errorRight: '占位文本',
+        },
+      ],
+      lengthImg: 'https://iph.href.lu/200x200?text=占位图片',
+      widthImg: 'https://iph.href.lu/200x200?text=占位图片',
+      hengImg: 'https://iph.href.lu/200x200?text=占位图片',
+      zongImg: 'https://iph.href.lu/200x200?text=占位图片',
     },
   ],
 

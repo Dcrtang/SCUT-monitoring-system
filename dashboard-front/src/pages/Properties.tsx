@@ -9,7 +9,7 @@ export function Properties() {
         指令属性
       </Typography>
       {config?.instructions?.map((instruction) => (
-        <Box key={instruction.id} marginTop="24px">
+        <Box key={instruction.id} marginTop="2%">
           <img src={getFileURL(instruction.img)} />
         </Box>
       ))}

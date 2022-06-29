@@ -4,6 +4,7 @@ import CachedIcon from "@mui/icons-material/Cached";
 import AirplayIcon from "@mui/icons-material/Airplay";
 import AppsIcon from "@mui/icons-material/Apps";
 import SettingsIcon from "@mui/icons-material/Settings";
+import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import { Admin } from "./pages/Admin";
 import { Intro } from "./pages/Intro";
@@ -12,6 +13,7 @@ import { Monitor } from "./pages/Monitor";
 import { Progress } from "./pages/Progress";
 import { Properties } from "./pages/Properties";
 import { Quality } from "./pages/Quality";
+import { Report } from "./pages/Report";
 
 export const theme = createTheme({
   typography: {
@@ -42,6 +44,12 @@ export const routes = [
     element: <Progress />,
     title: "工程进度",
     icon: <CachedIcon />,
+  },
+  {
+    path: "/report",
+    element: <Report />,
+    title: "钢箱梁厂内验收报告",
+    icon: <BatchPredictionIcon />,
   },
   {
     path: "/monitor",

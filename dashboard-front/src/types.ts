@@ -28,6 +28,48 @@ export interface Config {
     img: string;
   }[];
 
+  report: {
+    id: string;
+    name: string;
+    description: string;
+
+    length: {
+      id: string;
+      name: string;
+      lengthNum: string;
+      factLeft: string;
+      factMid: string;
+      factRight: string;
+      theoryLeft: string;
+      theoryMid: string;
+      theoryRight: string;
+      errorLeft: string;
+      errorMid: string;
+      errorRight: string;
+    }[];
+
+    width: {
+      id: string;
+      name: string;
+      widthNum: string;
+      factLeft: string;
+      factMid: string;
+      factRight: string;
+      theoryLeft: string;
+      theoryMid: string;
+      theoryRight: string;
+      errorLeft: string;
+      errorMid: string;
+      errorRight: string;
+    }[];
+
+    lengthImg: string;
+    widthImg: string;
+
+    hengImg: string;
+    zongImg: string;
+  }[];
+
   monitingData: {
     id: string;
     name: string;

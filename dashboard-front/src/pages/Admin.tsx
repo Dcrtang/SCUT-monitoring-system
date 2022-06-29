@@ -19,6 +19,7 @@ import { ProgressTab } from "../components/EditorTabs/ProgressTab";
 import { checkLogin, reset } from "../api";
 import { useMutation } from "react-query";
 import { QualityTab } from "../components/EditorTabs/QualityTab";
+import { ReportTab } from "../components/EditorTabs/ReportTab";
 
 export function Admin() {
   const [tab, setTab] = useState(0);
@@ -67,6 +68,7 @@ export function Admin() {
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label="项目简介" />
           <Tab label="工程进度" />
+          <Tab label="钢箱梁厂内验收报告" />
           <Tab label="施工监测数据" />
           <Tab label="指令属性" />
           <Tab label="工程质量管理" />
@@ -149,9 +151,10 @@ export function Admin() {
         </>
       )}
       {tab === 1 && <ProgressTab />}
-      {tab === 2 && <MonitorTab />}
-      {tab === 3 && <InstructionImagesTab />}
-      {tab === 4 && <QualityTab />}
+      {tab === 2 && <ReportTab />}
+      {tab === 3 && <MonitorTab />}
+      {tab === 4 && <InstructionImagesTab />}
+      {tab === 5 && <QualityTab />}
     </Box>
   );
 }

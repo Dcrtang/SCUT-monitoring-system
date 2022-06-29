@@ -22,7 +22,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const navBarRef = useRef<HTMLDivElement>();
-  const {data: config } = useConfig();
+  const { data: config } = useConfig();
   return (
     <>
       <CssBaseline />
@@ -45,14 +45,14 @@ function App() {
               height: "calc(100vh - 64px)",
             }}
           >
-            <Box sx={{ width: 250, height: "100%", flexShrink: 0 }}>
+            <Box sx={{ width: "18%", height: "100%", flexShrink: 0 }}>
               <List sx={{ backgroundColor: colors.grey[100], height: "100%" }}>
                 {routes.map((route) =>
                   route.title ? (
                     <ListItem
                       key={route.path}
                       disablePadding
-                      sx={{ height: "64px" }}
+                      sx={{ height: "8%" }}
                     >
                       <ListItemButton
                         sx={{ height: "100%" }}

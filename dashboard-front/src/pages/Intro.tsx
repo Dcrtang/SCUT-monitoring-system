@@ -31,7 +31,8 @@ export function Intro() {
       {tab === 0 && (
         <>
           <Text>{config?.intro.text}</Text>
-          <img src={getFileURL(config?.intro.img)} style={{ marginTop: "36px", display: "block", margin: "auto" }} />
+          <Box sx={{ height: "5%" }} />
+          <img src={getFileURL(config?.intro.img)} style={{display: "block", margin: "auto" }} />
         </>
       )}
       {tab === 1 && (
@@ -79,7 +80,7 @@ export function Intro() {
             </Table>
           </TableContainer>
           <img
-            style={{ marginTop: "12px" }}
+            style={{ marginTop: "5%" }}
             src={getFileURL(config?.intro.bridgeImg)}
           ></img>
         </Box>

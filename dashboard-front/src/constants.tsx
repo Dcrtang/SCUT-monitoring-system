@@ -54,7 +54,7 @@ export const routes = [
   {
     path: "/monitor",
     element: <Monitor />,
-    title: "施工监测数据",
+    title: "施工监控数据",
     icon: <AirplayIcon />,
   },
   {

@@ -74,8 +74,12 @@ export interface Config {
   monitingData: {
     id: string;
     name: string;
-    dataImg: string;
-    modelImg: string;
+    data: {
+      id: string;
+      name: string;
+      dataImg: string;
+      modelImg: string;
+    }[]
   }[];
 
   instructions: {
@@ -170,11 +174,17 @@ export const defaultConfig: Config = {
 
   monitingData: [
     {
-      id: '3b9786c0-f8a6-b6f2-ee88-6dc5f1347e21',
+      id: '15a35aa2-e2fd-4c68-a24c-069e4622067b',
       name: '占位文本',
-      dataImg: 'https://iph.href.lu/200x200?text=占位图片',
-      modelImg: 'https://iph.href.lu/200x200?text=占位图片',
-    },
+      data: [
+        {
+          id: '3b9786c0-f8a6-b6f2-ee88-6dc5f1347e21',
+          name: '占位文本',
+          dataImg: 'https://iph.href.lu/200x200?text=占位图片',
+          modelImg: 'https://iph.href.lu/200x200?text=占位图片',
+        }
+      ]
+    }
   ],
 
   instructions: [

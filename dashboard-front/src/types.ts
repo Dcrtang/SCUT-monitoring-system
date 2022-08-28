@@ -73,8 +73,12 @@ export interface Config {
   monitingData: {
     id: string;
     name: string;
-    dataImg: string;
-    modelImg: string;
+    data: {
+      id: string;
+      name: string;
+      dataImg: string;
+      modelImg: string;
+    }[]
   }[];
 
   instructions: {

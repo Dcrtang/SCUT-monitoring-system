@@ -31,7 +31,7 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2
    
    ```shell
    cd SCUT-monitoring-system
-   sudo docker compose up -d
+   sudo docker compose -f docker-compose.yaml up -d
    ```
 
 ### Operations
@@ -40,12 +40,16 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2
   
   ```shell
   cd SCUT-monitoring-system
-  sudo docker compose down
+  sudo docker -f docker-compose.yaml compose down
   ```
 
 - Updating services
   
   ```shell
   cd SCUT-monitoring-system
-  sudo docker compose pull
+  sudo docker -f docker-compose.yaml compose pull
   ```
+
+## For multi bridge version
+
+Just replace the ` -f docker-compose.yaml` args with ` -f docker-compose-multi-bridge.yaml`, it will work.

@@ -50,6 +50,6 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2
   sudo docker -f docker-compose.yaml compose pull
   ```
 
-## For multi bridge version
+## For single bridge version
 
-Just replace the ` -f docker-compose.yaml` args with ` -f docker-compose-multi-bridge.yaml`, it will work.
+Just replace the ` -f docker-compose.yaml` args with ` -f docker-compose-single-bridge.yaml`, it will work.

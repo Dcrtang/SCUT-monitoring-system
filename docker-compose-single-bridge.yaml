@@ -1,11 +1,11 @@
 version: "3.9"
 services:
   frontend:
-    image: dcrtang/scut-monitoring-system-front:multi-bridge
+    image: dcrtang/scut-monitoring-system-front:single-bridge
     ports:
       - "80:80"
   backend:
-    image: dcrtang/scut-monitoring-system-back:multi-bridge
+    image: dcrtang/scut-monitoring-system-back:single-bridge
     environment:
       - DATA_PATH=/dashboard_data # DO NOT CHANGE, use volumes instead.
       - PORT=80 # DO NOT CHANGE, for internal use only.

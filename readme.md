@@ -40,14 +40,14 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2
   
   ```shell
   cd SCUT-monitoring-system
-  sudo docker -f docker-compose.yaml compose down
+  sudo docker compose -f docker-compose.yaml down
   ```
 
 - Updating services
   
   ```shell
   cd SCUT-monitoring-system
-  sudo docker -f docker-compose.yaml compose pull
+  sudo docker compose -f docker-compose.yaml pull
   ```
 
 ## For single bridge version
